@@ -108,14 +108,14 @@ class HomePageState extends State<HomePage> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: GoogleMap(
-        mapType: MapType.normal,
+        mapType: MapType.satellite,
         initialCameraPosition:
         CameraPosition(target: LatLng(50.4501, 30.5234), zoom: 15),
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
         //call below funtion if you need marker
-        //markers: {exampleMarker},
+        markers: {exampleMarker1,exampleMarker2,exampleMarker3,exampleMarker4},
       ),
     );
   }
@@ -137,9 +137,9 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-Marker exampleMarker = Marker(
+Marker exampleMarker1 = Marker(
   markerId: MarkerId('markerId'),
-  position: LatLng(13.077101, 80.292651),
+  position: LatLng(50.4501, 30.5234),
   infoWindow: InfoWindow(
     title: 'Marker Title',
     snippet: 'Detail',
@@ -148,3 +148,39 @@ Marker exampleMarker = Marker(
     BitmapDescriptor.hueViolet,
   ),
 );
+
+Marker exampleMarker2 = Marker(
+  markerId: MarkerId('markerId1'),
+  position: LatLng(50.4511, 30.5244),
+  infoWindow: InfoWindow(
+    title: 'Marker Title',
+    snippet: 'Detail',
+  ),
+  icon: BitmapDescriptor.defaultMarkerWithHue(
+    BitmapDescriptor.hueViolet,
+  ),
+);
+Marker exampleMarker3 = Marker(
+  markerId: MarkerId('markerId3'),
+  position: LatLng(50.45101, 30.52334),
+  infoWindow: InfoWindow(
+    title: 'Marker Title',
+    snippet: 'Detail',
+  ),
+  icon: BitmapDescriptor.defaultMarkerWithHue(
+    BitmapDescriptor.hueViolet,
+  ),
+);
+
+Marker exampleMarker4 = Marker(
+  markerId: MarkerId('markerId4'),
+  position: LatLng(50.42511, 30.53244),
+  infoWindow: InfoWindow(
+    title: 'Marker Title',
+    snippet: 'Detail',
+  ),
+  icon: BitmapDescriptor.defaultMarkerWithHue(
+    BitmapDescriptor.hueViolet,
+  ),
+);
+
